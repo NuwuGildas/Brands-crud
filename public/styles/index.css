@@ -1,0 +1,10 @@
+
+body {
+    background-color: #ebebeb;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: aqua;
+}
