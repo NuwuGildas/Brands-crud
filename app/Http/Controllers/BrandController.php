@@ -50,17 +50,19 @@ class BrandController extends Controller
         }
 
         $details = [
-            'brand_name' => $request->name,
-            'brand_details' => $request->details,
+            'brand_name' => $request->brand_name,
+            'brand_details' => $request->brand_details,
             'rating' => $request->rating,
-            'brand_image' => $image_url
+            'brand_image' => $image_url,
+            'country_code' => $request->country_code,
+            'is_default' => isset($request->is_default) ? 1 : 0
         ];
 
         DB::beginTransaction();
         try {
             $brand = $this->brandRepositoryInterface->store($details);
             DB::commit();
-            return ApiResponseClass::sendResponse(new BrandResource($brand),'Product Create Successful',201);
+            return ApiResponseClass::sendResponse(new BrandResource($brand),'Brand Create Successful',201);
 
         }catch (\Exception $e){
             return ApiResponseClass::rollback($e);

@@ -9,7 +9,7 @@ class BrandRepository implements BrandRepositoryInterface
     public function index($country_code)
     {
         return Brand::where('country_code', $country_code)
-            ->orWhere('country_code', 'default')
+            ->orWhere('is_default', 1)
             ->orderBy('rating', 'DESC')
             ->get();
     }

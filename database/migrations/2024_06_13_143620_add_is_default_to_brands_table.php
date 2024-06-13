@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('brands', function (Blueprint $table) {
-            $table->id();
-            $table->string('brand_name');
-            $table->string('brand_details')->default(null);
-            $table->string('brand_image');
-            $table->integer('rating');
-            $table->timestamps();
+        Schema::table('brands', function (Blueprint $table) {
+            $table->boolean('is_default')->default(false);
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('brands');
+        Schema::table('brands', function (Blueprint $table) {
+            //
+        });
     }
 };

@@ -15,5 +15,6 @@ class Brand extends Model
         'brand_image',
         'rating',
         'country_code',
+        'is_default'
     ];
 }

@@ -1,18 +1,130 @@
 @media (max-width: 1024px) {
-    .container {
-        padding: 0 30px;
+    .container, .nav-parent {
+        padding: 10px;
     }
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 0 10px;
+    .container, .nav-parent {
+        width: 90%;
+        padding: 10px;
+    }
+
+    td.logo-cell {
+        padding-left: 10px;
+        contain: style;
+    }
+
+    .verify-cell{
+        display: none;
+    }
+
+    .rating-cell .rating:not(:checked) > label{
+        font-size: 10px;
+    }
+
+    .btn-desc-lg{
+        display: none;
+    }
+
+    td.action-cell {
+        width: unset !important;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 5px;
+    .container, .nav-parent {
+        padding: 10px;
+        width: 95%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr.main-ligne{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        border: 1px solid #c8c8c8;
+    }
+
+    table td{
+        width: 100% !important;
+        height: fit-content !important;
+        border: none;
+        padding: 10px 0;
+    }
+
+    td.num-cell{
+        height: 50px;
+        padding: 0 !important;
+    }
+
+    td.num-cell span{
+        display: block !important;
+        padding: 3px 8px 3px 8px;
+        height: fit-content;
+        width: fit-content;
+        color: #fff;
+        border-radius: 0 0 0 5px;
+        font-size: 16px;
+        margin: -1px -2px;
+        box-shadow: rgb(0 0 0 / 25%) 0 5px 4px;
+    }
+
+    td.num-cell span.num-disp{
+        background: #002051;
+        float: right;
+    }
+
+    td.num-cell span.verify-disp{
+        background: #149D6A;
+        float: left;
+    }
+
+    td p.details-ligne-sm{
+        display: block;
+        font-weight: normal;
+        padding: 3px 10px;
+        font-size: 11px !important;
+        color: darkgray;
+    }
+
+    tr.details-ligne {
+        display: none;
+    }
+
+    td div.brand{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .brand img {
+        width: 120px !important;
+        height: 120px !important;
+        margin-right: 2px !important;
+        margin-bottom: 10px;
+    }
+
+    .rating-cell .rating:not(:checked) > label{
+        font-size: 20px;
+    }
+
+    td.rating-cell{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-desc-lg{
+        display: inline;
+    }
+
+    td.action-cell{
+        max-width: unset !important;
     }
 }
 

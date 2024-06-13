@@ -20,7 +20,9 @@ class BrandResource extends JsonResource
             'name' => $this->brand_name,
             'details' => $this->brand_details,
             'image' => $this->brand_image,
-            'rating' => $this->rating
+            'rating' => $this->rating,
+            'country_code' => $this->country_code,
+            'default' => $this->is_default
         ];
     }
 }
