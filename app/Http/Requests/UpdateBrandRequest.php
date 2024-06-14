@@ -13,7 +13,7 @@ class UpdateBrandRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,8 @@ class UpdateBrandRequest extends FormRequest
     {
         return [
             'brand_name' => 'required',
-            'rating' => 'required'
+            'rating' => 'required',
+            'brand_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 

@@ -55,7 +55,13 @@
             <div class="dialog-body">
                 <form id="brand_form">
                     {{csrf_field()}}
+                    <input type="hidden" name="brand_id" id="brand_id">
                     <div class="form-control">
+                        <div class="form-col">
+                            <img src="{{asset('images/default.png')}}" class="img-preview" alt="logo" onerror="this.src='{{asset('images/default.png')}}" style="background: lightgrey;"/>
+                            <input type="file" name="brand_image" id="brand_image" class="none" />
+                            <label class="logo button" for="brand_image">Choose Logo</label>
+                        </div>
                         <div class="form-col">
                             <label for="brand_name">Enter brand name
                             </label>
