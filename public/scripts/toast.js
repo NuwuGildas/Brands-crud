@@ -11,7 +11,7 @@ function createNotification(message, type = null, delay = null) {
     else if (type === "warn") notif.classList.add("warn");
     else if (type === "error") notif.classList.add("error-msg");
 
-    notif.innerText = message;
+    notif.innerHTML = message;
     toasts.append(notif);
 
     if (delay) {

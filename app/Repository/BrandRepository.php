@@ -27,13 +27,18 @@ class BrandRepository implements BrandRepositoryInterface
     public function update(array $data, $id)
     {
         Brand::whereId($id)->update($data);
-     
+
         return Brand::find($id);
-        
+
     }
 
     public function delete($id)
     {
-        Brand::destroy($id);
+        $brand = Brand::find($id);
+        $brand_name = $brand->brand_name;
+
+        $brand->delete();
+
+        return $brand_name;
     }
 }

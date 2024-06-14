@@ -95,8 +95,10 @@ class BrandController extends Controller
      * Update the specified resource in storage.
      */
     public function update(UpdateBrandRequest $request, $id)
-    { 
-        $image_url = '/images/default.png';
+    {
+        $image_url = Brand::where('id', $id)->select('brand_image')->first();
+        $image_url = $image_url->brand_image;
+
         if($request->hasFile('brand_image')){
             $file = $request->file('brand_image');
 
@@ -130,8 +132,7 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        $this->brandRepositoryInterface->delete($id);
-
-        return ApiResponseClass::sendResponse('Successful Delete', '', 204);
+        $brand = $this->brandRepositoryInterface->delete($id);
+        return ApiResponseClass::sendResponse('', 'Successful Delete '.$brand, 201);
     }
 }

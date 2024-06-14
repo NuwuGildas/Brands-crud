@@ -25,6 +25,7 @@ class ApiResponseClass
         if(!empty($message)){
             $response['message'] =$message;
         }
+
         return response()->json($response, $code);
     }
 }

@@ -17,8 +17,10 @@
         <link rel="stylesheet" href="{{asset('styles/modal.css')}}">
     </head>
     <body >
+        <div id="toasts" class="toasts"></div>
+
         <div class="nav-parent">
-            <button onclick="openModal()">
+            <button id="open_button">
                 <i class="fa-solid fa-plus"></i> Add Brand
             </button>
         </div>
@@ -45,12 +47,10 @@
             </div>
         </div>
 
-        <div id="toasts" class="toasts"></div>
-
         <dialog class="modal">
             <div class="dialog-header">
                 <h3>Modal Dialog</h3>
-                <button class="close-modal close-button" onclick="closeModal()">&times;</button>
+                <button class="close-modal close-button" >&times;</button>
             </div>
             <div class="dialog-body">
                 <form id="brand_form">
@@ -61,6 +61,7 @@
                             <img src="{{asset('images/default.png')}}" class="img-preview" alt="logo" onerror="this.src='{{asset('images/default.png')}}" style="background: lightgrey;"/>
                             <input type="file" name="brand_image" id="brand_image" class="none" />
                             <label class="logo button" for="brand_image">Choose Logo</label>
+                            <small id="brand_image-err" class="none" style="color: red;"></small>
                         </div>
                         <div class="form-col">
                             <label for="brand_name">Enter brand name
