@@ -1,7 +1,7 @@
 # README
  
 
-### How do i Set up
+### How to Set up
  
 - Clone this repository to your local machine
 ```
